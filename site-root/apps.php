@@ -1,0 +1,3 @@
+<?php
+
+AppsRequestHandler::handleRequest();
