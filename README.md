@@ -1,5 +1,7 @@
 # appsforphilly.org
 
+A crowd-managed directory for citizens to find apps built for their city.
+
 ## Requirements
 The AppsForPhilly site is built on the Emergence PHP framework and engine, and requires an Emergence server to host it.
 
