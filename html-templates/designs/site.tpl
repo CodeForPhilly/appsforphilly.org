@@ -77,7 +77,7 @@
 			<div class="container">
 				<hr />
 				<footer>
-					<p>Built and maintained by <a href="http://appsforphilly.org">Apps for Philly</a>.</p>
+					<p>Built and maintained by <a href="http://codeforphilly.org">Code for Philly</a>.</p>
 				</footer>
 			</div>
 		{/block}
