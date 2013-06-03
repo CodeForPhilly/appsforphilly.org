@@ -1,3 +1,18 @@
+
+.logo {
+	display: block;
+	height: 200px;
+	text-align: center;
+}
+
+.logo a {
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	background: url(/img/applogoblue.png) no-repeat center center;
+}
+
+
 .navbar-inverse .nav > li > a.google{
 	position: relative;
 	top: 0px;
@@ -99,32 +114,11 @@
 	top: 0%;
 } 
 
-.logo {
-	display: block;
-	position: relative;
-	background-color: #000;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	z-index: 1;
-	width: 200px;
-	height: 200px;
-	background-color: #FFFFFF;
-	background-image: url(/img/applogoblue.png);
-	background-repeat: no-repeat;
-	margin-left: 40%;
-	}
-
-figure.logo a {
-	position: fixed;
-	height: 30%;
-	width: 20%;
-	background-repeat: no-repeat;
-	}
 	
-	span{
+span {
+	line-height: 20px;
+}
 		
-		line-height: 20px;
-		}
-		
-		.auto-size { width: auto; }
+.auto-size {
+	width: auto;
+}

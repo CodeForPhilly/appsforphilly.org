@@ -11,17 +11,16 @@
 		{/block}
 		
 		{block css}
-			{block css}
-			<link rel="stylesheet" href="/css/base.css">
-			<link rel="stylesheet" href="/css/site.css">
-			<link rel="stylesheet" href="/css/new.css">
-			<link rel="stylesheet" href="/css/bootstrap.css">
-			<link rel="stylesheet" href="/css/bootstrap-responsive.css">
+			{*
+				Compresses all CSS files into a single cached and version-signed request.
+				Add ?css-debug=1 to any URL to load separate uncompressed files
+			*}
+			{cssmin "bootstrap.css+bootstrap-responsive.css+site.css+new.css"}
 		{/block}
 
 		{block js}
 			{*
-				Compresses all JS files into a single request.
+				Compresses all JS files into a single cached and version-signed request.
 				Add ?js-debug=1 to any URL to load separate uncompressed files
 			*}
 			{jsmin "jquery.js+bootstrap/bootstrap-tooltip.js+bootstrap/*"}
@@ -31,7 +30,7 @@
 		{block navbar}
 			<section class="container">
 				<figure class="logo">
-					<a href="http://appsforphilly.org"></a>
+					<a href="/"></a>
 				</figure>
 			</section>
 			<section class="container">
@@ -50,17 +49,17 @@
 							</ul>
 							<a class="brand" href="/">Apps For Philly</a>
 							<div class="nav-collapse collapse">
-								<ul class = "nav pull-right">
+								<ul class="nav pull-right">
 									<li><a href="/">Home</a></li>
-									<li><a href="/categories">Categories</a></li>
+									{*<li><a href="/categories">Categories</a></li>*}
 									{if $.User}
 										<li><a href="/apps/create">Add an App</a></li>
 									{/if}
+
 									{if $.User}
-										<li><a href="/members/{$.User->Username}">{$.User->FirstName}</a></li>
+										{*<li><a href="/members/{$.User->Username}">{$.User->FirstName}</a></li>*}
 										<li><a href="/logout">Logout</a></li>
-										</li>
-										{else}
+									{else}
 										<li><a href="/login">Login</a></li>
 										<li><a href="/register">Sign Up</a></li>
 									{/if}
@@ -71,7 +70,9 @@
 				</div>
 			</section>
 		{/block}
-		{block content}	{/block}
+
+		{block content}{/block}
+
 		{block footer}
 			<div class="container">
 				<hr />

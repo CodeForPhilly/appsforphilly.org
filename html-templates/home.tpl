@@ -1,12 +1,11 @@
 {extends designs/site.tpl}
+
 {block content}
 	<section class="container">
 		<section class="app">
 		{foreach item=App from=$apps}
 			<div class=".row-fluid">
 				<article class="app">
-		
-
 		
 					<h2><a href="#{$App->Handle}" name="{$App->Handle}">{$App->Title|escape}</a></h2>
 		
@@ -47,5 +46,3 @@
 		</section>
 	</section>
 {/block}
-
-
