@@ -42,10 +42,10 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</a>
-							<ul class = "nav pull-left">
-								<li><a href="" class="google +" target="_blank"><span>Google +</span></a></li>							
-								<li><a href="http://twitter.com/appsforphilly" class="twitter" target="_blank"><span>Twitter</span></a></li>
-								<li><a href="http://plus.google.com/appsforphilly" class="rss" target="_blank"><span>Rss</span></a></li>					
+							<ul class="nav pull-left">
+								<li><a href="#" class="google +" target="_blank"><span>Google +</span></a></li>							
+								<li><a href="#" class="twitter" target="_blank"><span>Twitter</span></a></li>
+								<li><a href="#" class="rss" target="_blank"><span>rss</span></a></li>					
 							</ul>
 							<a class="brand" href="/">Apps For Philly</a>
 							<div class="nav-collapse collapse">
