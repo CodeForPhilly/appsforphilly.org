@@ -1,0 +1,3 @@
+<?php
+
+EventsRequestHandler::handleRequest();

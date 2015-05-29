@@ -3,6 +3,7 @@
 {block title}Saved {$data->Title|escape} &mdash; Apps &mdash; {$dwoo.parent}{/block}
 
 {block content}
+	<div class="simple-page">
 	{$App = $data}
 
 	{if $App->isNew}
@@ -10,4 +11,5 @@
 	{else}
 		<p>Your changes to {appLink $App} have been saved.</p>
 	{/if}
+	</div>
 {/block}

@@ -3,7 +3,13 @@
 {block "title"}Register &mdash; {$dwoo.parent}{/block}
 
 {block "content"}
+
+<div class="wrapper">
+	<div class="simple-page">
+	
+	<h2>Register</h2>
 	{$User = $data}
+	
 	<form method="POST" id="register">
 	{strip}
 		{if $User->validationErrors}
@@ -15,69 +21,65 @@
 			</ul>
 		{/if}
 	
-		<div class="form-horizontal span6 offset3">
-			<h3>Register with the Apps for Philly Brigade!</h3>
-			<div class="control-group">
-					<label class="control-label">
-						First Name
+		<fieldset>
+			<div class="field-pair">
+				<div class="field text" id="register-firstname">
+					<label>
+						<span>First Name</span>
+						<input type="text" name="FirstName" value="{refill field=FirstName}">
 					</label>
-					<div class="controls">
-							<input type="text" name="FirstName" value="{refill field=FirstName}" placeholder="Jenny">
-					</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">
-					Last Name
-				</label>
-				<div class="controls">
-					<input type="text" name="LastName" value="{refill field=LastName}" placeholder="Appleseed">
+				</div>
+			
+				<div class="field text" id="register-lastname">
+					<label>
+						<span>Last Name</span>
+						<input type="text" name="LastName" value="{refill field=LastName}">
+					</label>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label">
-					Email Address
+			
+			<div class="field text email" id="register-email">
+				<label>	
+					<span>Email Address</span>
+					<input type="email" name="Email" value="{refill field=Email}">
 				</label>
-				<div class="controls">
-					<input type="email" name="Email" value="{refill field=Email}" placeholder="civic.hacker@example.com">
-					<div class="muted" id="register-privacy">
-						Your email address will not be shared with anyone.
-					</div>
+				<div class="hint" id="register-privacy">
+					This will not be shared with anyone.
+				</div>
+			</div>
+			
+			<div class="field text" id="register-username">
+				<label>
+					<span>Username</span>
+					<input type="text" name="Username" value="{refill field=Username}">
+				</label>
+			</div>
+			
+			<div class="field-pair">
+				<div class="field text password" id="register-password">
+					<label>
+						<span>Password</span>
+						<input type="password" name="Password">
+					</label>
 				</div>
 				
-			</div>
-			<div class="control-group">
-				<label class="control-label">
-					Username
-				</label>
-				<div class="controls">
-					<input type="text" name="Username" value="{refill field=Username}" placeholder="CivicHacker">
+				<div class="field text password" id="register-passwordconfirm">
+					<label>
+						<span>(Confirm)</span>
+						<input type="password" name="PasswordConfirm">
+					</label>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label">
-					Password
-				</label>
-				<div class="controls">
-					<input type="password" name="Password">
-				</div>
+			
+			<div class="submit">
+				<input type="submit" class="button submit" value="Create account">
 			</div>
-			<div class="control-group">
-				<label class="control-label">
-					Password Confirmation
-				</label>
-				<div class="controls">
-					<input type="password" name="PasswordConfirm">
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label"></label>
-				<div class="controls">
-					<input type="submit" class="btn submit" value="Create account"><br/><br/>
-					<p class="form-hint">Already have an account? <a href="/login">Log in</a></p>
-				</div>
-			</div>
-		</div>
+		</fieldset>
 	{/strip}
 	</form>
 	
+	<p class="form-hint">Already have an account? <a href="/login">Log in</a></p>
+	
+	</div>
+</div>
 {/block}

@@ -7,6 +7,7 @@ class App extends VersionedRecord
 	
 	// ActiveRecord configuration
 	static public $tableName = 'apps'; // the name of this model's table
+	static public $collectionRoute = '/apps';
 	
 	// controllers will use these values to figure out what templates to use
 	static public $singularNoun = 'app'; // a singular noun for this model's object
@@ -38,7 +39,7 @@ class App extends VersionedRecord
 		)
 		,'Platform' => array(
 			'type' => 'enum'
-			,'values' => array('Web', 'Web - Responsive', 'Web - Touch App', 'iOS','Android', 'Mac OS X', 'Windows', 'Linux')
+			,'values' => array('Web', 'Web - Responsive', 'Web - Touch App', 'iOS', 'Android', 'Mac OS X', 'Windows', 'Linux')
 			,'notnull' => false	
 		)		
 		,'PublisherType' => array(
@@ -59,12 +60,14 @@ class App extends VersionedRecord
 			'type' => 'one-one'
 			,'class' => 'Media'
 		)
+        ,'Tags' => array(
+        	'type' => 'many-many'
+        	,'class' => 'Tag'
+        	,'linkClass' => 'TagItem'
+        	,'linkLocal' => 'ContextID'
+        	,'conditions' => array('Link.ContextClass = "App"')
+        )
 	);
-	
-	static public function getByHandle($handle)
-	{
-		return static::getByField('Handle', $handle);
-	}
 	
 	public function save($deep = true)
 	{
@@ -78,6 +81,16 @@ class App extends VersionedRecord
 		parent::validate();
 		
 		HandleBehavior::onValidate($this, $this->_validator);
+		
+		$this->_validator->validate(array(
+			'field' => 'Title'
+			,'minlength' => 2
+		));
+		
+		$this->_validator->validate(array(
+			'field' => 'Url'
+			,'validator' => 'url'
+		));
 		
 		return $this->finishValidation();
 	}

@@ -1,0 +1,237 @@
+.event-description {
+    padding: 0 1em;
+    
+    h1 {
+        margin: 1em -.5em;
+        
+        + h2 {
+            border: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    
+    p, ul, ol,
+    h2, h3, h4, h5, h6 {
+        margin: 0 0 1em;
+    }
+    
+    ul, ol {
+        margin-left: 1em;
+    }
+    
+    h2 {
+        border-top: 1px solid rgba($accent-color, .3);
+        color: lighten($accent-color, 10);
+        margin: 1em 0 .5em;
+        padding-top: 1em;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+    
+    h3 {
+        font-size: 1em;
+        font-weight: bold;
+        line-height: inherit;
+        margin-bottom: 0;
+        
+        strong {
+            color: $accent-color;
+        }
+    }
+    
+    strong {
+        color: white;
+    }
+}
+
+h2.event-logo.transit{
+	color: #fff;
+	float: left;
+	font-size: 51px;
+	padding: 33px 0 0 5px;
+	
+	@media#{$mq-tablet} {
+		font-size: 67px;
+		float: left;
+		padding: 41px 0 0 10px;
+	}	
+	@media#{$mq-browser} {
+		font-size: 82px;
+		padding: 50px 0 0 10px;
+	}	
+}
+
+
+
+.event {
+	.copy{
+		
+		p{
+			color: #fff;
+		}
+	}
+	.intro{
+		
+		article{
+			padding-top: 0;
+		}
+		
+		p:first-child{
+			padding-top: 0;
+		}
+	}
+	
+	.event-info{
+		
+		div{
+			clear: left;
+			float: left;
+			overflow: hidden;
+		}
+		dt{
+			color: $desaturate-color;
+			font-size: 18px;
+			padding-right: 15px;
+			text-align: right;
+			text-transform: uppercase;
+			width: 75px;
+		}
+		dd{
+			float: left;
+			padding-bottom: 10px;
+			overflow: hidden;
+		}
+		dd p{
+			font-size: 22px;
+			font-family: $header-font;
+			line-height: 20px;
+			margin: 0;
+			padding-top: 3px;
+			overflow: hidden;
+			text-transform: uppercase;
+		}
+		h5{
+			color: #aaa;
+			float: left;
+			font-size: 55px;
+			margin: 0 10px 0 0px;
+			overflow: hidden;
+		}
+		ul{
+			float: left;
+			padding-top: 3px;
+		}
+		li{
+			display: block;
+			list-style: none;
+			line-height: 15px;
+		}
+		.button{
+			float: right;
+			margin-top: 10px;
+			width: 100%;
+			
+			@media #{$mq-tween}{
+				margin-top: 5px;
+				width: auto;
+			}
+		}
+	}
+	.day{
+		border-top: 1px solid $page-bg-color;
+		margin-top: 20px;
+		padding-top: 20px;
+		
+		h3{
+			color: $desaturate-color;
+			font-size: 18px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		ul{
+			margin-top: 10px;
+		}
+		li{
+			list-style: none;
+			display: block;
+			color: #aaa;
+		}
+		span{
+			color: $desaturate-color;
+			font-weight: bold;
+		}
+	}
+}
+
+.sponsors{
+	margin: 0 auto;
+	width: 95%;
+	
+	&.organizers a{
+		font-size: 30px;
+		line-height: 35px;
+		text-align: center;
+		
+		li{
+			&:last-child{
+				width: 100%;
+			}
+		}
+	}
+
+	li{
+		display: block;
+		list-style: none;
+		float: left;
+		margin: 20px 10px;
+		width: 42%;
+			
+		&:nth-child(even){
+			float: right;
+			margin-right: 0;
+		}
+	}
+	a{
+		display: inline-block;
+		list-style: none;
+		margin: 0 auto 20px;
+	}
+	.sponsor-logo{
+		color: #aaa;
+		display: block;
+		padding: 20px 10px;
+		max-width: 100%;		
+	}
+	.sponsor-logo-empty{
+		color: #aaa;
+		display: block;
+		max-width: 100%;
+		border: dashed 2px #aaa;
+		text-align: center;
+		padding: 44px;
+	}
+	.col{
+		float: left;
+		width: 100%;
+		
+		
+		&:first-child{
+			margin-right: 20px;			
+		}
+		
+		@media#{$mq-tween}{
+			width: 47%;	
+		}
+		
+	}
+	img{
+		max-width: 100%;
+		height: auto;
+		width: auto;
+	}
+
+}
